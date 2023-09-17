@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Admin Panel";
+}
+<style>
+
+    .btn-primary {
+        top: 50%;
+        left: 60%;
+        width: 130px;
+        height: 40px;
+        position: absolute;
+        z-index: 2;
+        background: blue;
+    }
+</style>
+
+@*model IList<Hareket>*@
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<div class="container">
+    <div class="row mt-12">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Hareket Numarası</th>
+                        <th>Cihaz No</th>
+                        <th>Hata Açıklaması</th>
+                        <th>Kullanıcı Ad Soyad</th>
+                        <th>Yetkili Ad Soyad</th>
+                        <th>Çağrı Durum</th>
+                        <th>Çağrı Açılış</th>
+                        <th>Çağrı Yanıt</th>
+                        <th>Çağrı Kapanış</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.HAREKET_NUMARASI</td>
+                            <td>@item.CIHAZ_NO</td>
+                            <td>@item.HATA_ACIKLAMASI</td>
+                            <td>@item.KULLANICI_ADSOYAD</td>
+                            <td>@item.YETKILI_ADSOYAD</td>
+                            <td>@item.CAGRI_DURUM</td>
+                            <td>@item.CAGRI_ACILIS</td>
+                            <td>@item.CAGRI_YANIT</td>
+                            <td>@item.CAGRI_KAPANIS</td>
+                            <td>
+                                <button class="btn btn-primary" onclick="selectCihaz'@item.HAREKET_NUMARASI', '@item.CIHAZ_NO', '@item.HATA_ACIKLAMASI', '@item.KULLANICI_ADSOYAD', '@item.YETKILI_ADSOYAD', '@item.CAGRI_DURUM', '@item.CAGRI_ACILIS', '@item.CAGRI_YANIT', '@item.CAGRI_KAPANIS')">Select</button>
+                            </td>
+                        </tr>
+                    }*@
+                </tbody>
+            </table>
+            <div id="selectedCihazDetails">
+                <h3>Seçilen Cihaz Detayları:</h3>
+                <p>Hareket Numarası: <span id="selectedCihazID"></span></p>
+                <p>Cihaz No: <span id="selectedCihazNo"></span></p>
+                <p>Hata Açıklması: <span id="selectedHata"></span></p>
+                <p>Kullanıcı Ad Soyad: <span id="selectedKullanici"></span></p>
+                <p>Yetkili Ad Soyad: <span id="selectedYetkili"></span></p>
+                <p>Çağrı Durum: <span id="selectedDurum"></span></p>
+                <p>Çağrı Açılış: <span id="selectedAcilis"></span></p>
+                <p>Çağrı Yanıt: <span id="selectedYanit"></span></p>
+                <p>Çağrı Kapanış: <span id="selectedKapanis"></span></p>
+            </div>
+
+            <script>
+                function selectBook(id, cihaz, hata, kullanici, yetkili, durum, acilis, yanit, kapanis) {
+                    document.getElementById("selectedCihazID").textContent = id;
+                    document.getElementById("selectedCihazNo").textContent = cihaz;
+                    document.getElementById("selectedHata").textContent = hata;
+                    document.getElementById("selectedKullanici").textContent = kullanici;
+                    document.getElementById("selectedYetkili").textContent = yetkili;
+                    document.getElementById("selectedDurum").textContent = durum;
+                    document.getElementById("selectedAcilis").textContent = acilis;
+                    document.getElementById("selectedYanit").textContent = yanit;
+                    document.getElementById("selectedKapanis").textContent = kapanis;
+                }
+            </script>
+            <!--ana ekran geç butonunu sildim -->
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="checkboxOptions">Çağrı Atama:</label>
+        <div>
+            <input type="radio" id="option1" name="radioOptions" value="option1">
+            <label for="option1">Mustafa User</label>
+        </div>
+        <div>
+            <input type="radio" id="option2" name="radioOptions" value="option2">
+            <label for="option2">Option 2</label>
+        </div>
+        <div>
+            <input type="radio" id="option3" name="radioOptions" value="option3">
+            <label for="option3">Option 3</label>
+        </div>
+    </div>
+    <div class="text-left">
+        <button type="submit" class="btn btn-primary" onclick="validateForm()">Gönder</button>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.3/js/bootstrap.bundle.min.js"></script>
+<script>
+    function validateForm() {
+        var radios = document.getElementsByName('radioOptions');
+        var selectedOption = false;
+
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                selectedOption = true;
+                break;
+            }
+        }
+
+        if (!selectedOption) {
+            alert("Lütfen seçim yapınız.");
+        } else {
+            alert("Başarıyla gönderildi.");
+        }
+    }
+</script>

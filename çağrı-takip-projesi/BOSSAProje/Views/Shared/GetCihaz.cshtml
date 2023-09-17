@@ -1,0 +1,139 @@
+﻿@model Cihaz
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="container">
+
+    <div class="col-md-12">
+
+        <div class="form-group row">
+
+            <form asp-asp-controller="Cihazlar" asp-action="GetCihaz" method="get">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="fabrikakodu">Fabrika Kodu:</label>
+                        <input type="text" class="form-control" value="@Model.FABRIKA_KOD" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="fabrikaadi">Fabrika Adı:</label>
+                        <input type="text" class="form-control" value="@Model.FABRIKA_ADI" id="" name="" disabled>
+                    </div>
+                     
+                    <div class="col-md-3">
+                        <label for="cihazno">Cihaz No:</label>
+                            <input type="text" class="form-control" value="@Model.CIHAZ_NO" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cihazgrubu">Cihaz Grubu:</label>
+                        <input type="text" class="form-control" value="@Model.CIHAZ_GRUBU" id="" name="" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="cihazgrubuadi">Cihaz Grubu Adı:</label>
+                        <input type="text" class="form-control" value="@Model.CIHAZ_GRUBU_ADI" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cihazaltgrubu">Cihaz Alt Grubu:</label>
+                        <input type="text" class="form-control" value="@Model.CIHAZ_ALT_GRUBU" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cihazaltgrubuadi">Cihaz Alt Grubu Adı:</label>
+                        <input type="text" class="form-control" value="@Model.CIHAZ_ALT_GRUP_ADI" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="markasi">Markası:</label>
+                        <input type="text" class="form-control" value="@Model.Markası" id="" name="" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="cihazmodeli">Cihaz Modeli:</label>
+                        <input type="text" class="form-control" value="@Model.CIHAZ_MODELI" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="modeladi">Model Adı:</label>
+                        <input type="text" class="form-control" value="@Model.MODEL_ADI" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="processorkodu">Processor Kodu:</label>
+                        <input type="text" class="form-control" value="@Model.PROCESSOR_KODU" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="processoradi">Processor Adı:</label>
+                        <input type="text" class="form-control" value="@Model.PROCESSOR_ADI" id="" name="" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="sirketkodu">Şirket Kodu:</label>
+                        <input type="text" class="form-control" value="@Model.SIRKET_KODU" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="sirketadı">Şirket Adı:</label>
+                        <input type="text" class="form-control" value="@Model.SIRKET_ADI" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="isykodu">ISY Kodu:</label>
+                        <input type="text" class="form-control" value="@Model.ISY_KODU" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="kullanicisicilno">Kullanıcı Sicil No:</label>
+                        <input type="text" class="form-control" value="@Model.KULLANICI_SICIL_NO" id="" name="" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="kullaniciadisoyadi">Kullanıcı Adı-Soyadı:</label>
+                        <input type="text" class="form-control" value="@Model.KULLANICI_AD_SOYAD" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="calisiyomu">Çalışıyor mu?:</label>
+                        <input type="text" class="form-control" value="@Model.CALISIYOR_MU" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="departmankodu">Departman Kodu:</label>
+                        <input type="text" class="form-control" value="@Model.DEPARTMAN_KODU" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="departmanadi">Departman Adı:</label>
+                        <input type="text" class="form-control" value="@Model.DEPARTMAN_ADI" id="" name="" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="pertmi">Pert mi?:</label>
+                        <input type="text" class="form-control" value="@Model.PERT_MI" id="" name="" disabled>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="bulunduguyer">Bulunduğu Yer:</label>
+                        <input type="text" class="form-control" value="@Model.BULUNDUGU_YER" id="" name="" disabled>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <form asp-asp-controller="Cihazlar" asp-action="AddHareket" method="get">
+            <main class="container">
+                <form >
+                    <div class="mb-3">
+
+
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="açıklama..."></textarea>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary" OnClick="AddHareket">Gönder</button>
+                </form>
+            </main>
+        </form>
+
+        @*<a href="@Url.Action("CagriGiris", "Home")">Ana Ekrana Geri Dön</a>*@
+
+        @Html.ActionLink("Ana Ekrana Geç", "CagriGiris", "Home", null, new { @class = "btn btn-primary" })
+
+
+    </div>
+
+</div>

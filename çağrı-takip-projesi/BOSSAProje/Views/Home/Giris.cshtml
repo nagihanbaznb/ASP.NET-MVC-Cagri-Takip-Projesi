@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "Giris";
+}
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .container {
+        display: grid;
+        place-items: center;
+        height: 100%;
+    }
+
+    .btn-user {
+        background-color: green;
+        color: white;
+        padding: 15px 30px;
+        margin-bottom: 10px;
+        width: 200px;
+        text-align: center;
+        display: inline-block;
+        transition: none;
+    }
+
+        .btn-user:hover {
+            background-color: green;
+        }
+
+    .btn-admin {
+        background-color: red;
+        color: white;
+        padding: 15px 30px;
+        margin-bottom: 10px;
+        width: 200px;
+        text-align: center;
+        display: inline-block;
+        transition: none;
+    }
+
+        .btn-admin:hover {
+            background-color: red;
+        }
+
+    .buttons-container div:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        margin-bottom: 50px;
+    }
+</style>
+
+<div class="container">
+    <div class="buttons-container">
+
+        <h1>Giriş</h1>
+
+        @if (TempData["AlertMessage"] != null)
+        {
+            <script>
+                alert('@TempData["AlertMessage"]');
+            </script>
+        }
+
+        <div>
+            @Html.ActionLink("Çağrı Gir", "cagrigiris", "Home", null, new { @class = "btn btn-user" })
+        </div>
+        <div>
+            @*@Html.ActionLink("Eski Çağrılar", "EskiCagrilar", "Home", null, new { @class = "btn btn-admin" })*@
+
+            @Html.ActionLink("Eski Çağrılar", "GetUserCall", "Cihazlar", null, new { @class = "btn btn-admin" })
+        </div>
+    </div>
+</div>
+</div>

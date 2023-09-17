@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Hareket>
+@*@model Hareket*@
+@{
+    ViewData["Title"] = "EskiCagrilar";
+}
+<p></p>
+<p></p>
+<p></p>
+<style>
+  
+    .post {
+        text-align:center;
+        padding: 20px;
+        max-width: 80%;
+    }
+</style>
+
+<div class="post">
+<h1>Eski Çağrılar</h1>
+</div>
+<div class="container">
+    <div class="row mt-12">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Hareket Numarası</th>
+                        <th>Cihaz No</th>
+                        <th>Hata Açıklaması</th>
+                        <th>Kullanıcı Ad Soyad</th>
+                        <th>Yetkili Ad Soyad</th>
+                        <th>Çağrı Durum</th>
+                        <th>Çağrı Açılış</th>
+                        <th>Çağrı Yanıt</th>
+                        <th>Çağrı Kapanış</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.HAREKET_NUMARASI</td>
+                            <td>@item.CIHAZ_NO</td>
+                            <td>@item.HATA_ACIKLAMASI</td>
+                            <td>@item.KULLANICI_ADSOYAD</td>
+                            <td>@item.YETKILI_ADSOYAD</td>
+                            <td>@item.CAGRI_DURUM</td>
+                            <td>@item.CAGRI_ACILIS</td>
+                            <td>@item.CAGRI_YANIT</td>
+                            <td>@item.CAGRI_KAPANIS</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

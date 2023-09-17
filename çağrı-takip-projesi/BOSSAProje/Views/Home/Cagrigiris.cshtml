@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Cihaz
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            @*<form asp-asp-controller="Home" asp-action="Cagrigiris" method="post">*@
+            @*<form asp-asp-controller="Home" asp-action="GetCihaz" method="post">*@
+                <form asp-controller="Cihazlar" asp-action="GetCihaz" method="post">
+                <div class="form-group row">
+                    <h3 for="listbox">Seri no:</h3>
+                    @*using (Html.BeginForm("SendReport", "Cihazlar", FormMethod.Post))*@
+                    
+
+                        @*<form action="/Controller/Cihazlar" method="post">*@
+                        <form action="/Cihazlar/GetCihaz" method="post">
+                            <input type="text" id="SERI_NO" name="SERI_NO" required />
+                        </form>
+                        @*</form>*@
+                    
+                    <p></p>
+                    <div class="col-md-6">
+                        @*<select class="form-control" id="listbox" name="listbox">
+                            <button type="submit" class="btn btn-primary">Control</button>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        <!-- Add more options as needed -->*@
+                        </select>
+                    </div> <button type="submit" class="btn btn-primary">Control</button>
+                    @* </div>
+                <button type="submit" class="btn btn-primary">Control</button>
+                    <div class="form-group row">*@
+                    <form asp-asp-controller="Cihazlar" asp-action="GetCihaz" method="get">
+                      
+@*                <div class="col-md-6">
+                <label for="sicil3">Sicil No 3:</label>
+                            @if (Model != null && !String.IsNullOrEmpty(Model.FABRIKA_ADI))
+                            {
+                                <input type="text" class="form-control" value="a" id="" name="" disabled>
+
+                                //<input type="text" class="form-control" value="@Model.FABRIKA_ADI" id="" name="" disabled>
+
+                                //<input type="text" class="form-control" value="a " id="" name="" disabled>
+                            }
+
+                            //if is not null
+                            else
+                            {
+                                <input type="text" class="form-control" value="b" id="" name="" disabled>
+
+                                //<input type="text" class="form-control" value="a " id="" name="" disabled>
+
+                            }
+                        </div>*@
+                    </form>
+                    @*
+                <div class="col-md-6">
+                <label for="sicil4">Sicil No 4:</label>
+                <input type="text" class="form-control" id="sicil4" name="sicil4" disabled>
+                </div>
+                </div>
+                <div class="form-group row">
+                <div class="col-md-6">
+                <label for="sicil3">Sicil No 3:</label>
+                <input type="text" class="form-control" id="sicil3" name="sicil3" disabled>
+                </div>
+                <div class="col-md-6">
+                <label for="sicil4">Sicil No 4:</label>
+                <input type="text" class="form-control" id="sicil4" name="sicil4" disabled>
+                </div>
+                </div>
+                <p></p>
+                <main class="container">
+                <form>
+                <div class="mb-3">
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Açıklama..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+
+                </form>
+                </main>
+                *@
+            </form>
+        </div>
+    </div>
+</div>
+
